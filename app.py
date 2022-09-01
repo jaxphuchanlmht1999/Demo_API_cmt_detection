@@ -3,7 +3,7 @@ import pickle
 
 app = Flask(__name__)
 
-
+# API
 @app.route('/post', methods=["POST"])
 def predict():
     input_json = request.get_json(force=True)
@@ -20,6 +20,7 @@ def predict():
     else:
         return 'Key Error'
 
+# Demo Predict
 @app.route('/')
 def main():
     return render_template('predict.html')
