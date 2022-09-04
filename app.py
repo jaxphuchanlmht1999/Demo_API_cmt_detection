@@ -28,8 +28,11 @@ def main():
 @app.route('/sub', methods = ['POST'])
 def submit():
     if request.method == 'POST':
-        text = request.form['text']
-        key = request.form['key']
+#         text = request.form['text']
+#         key = request.form['key']
+        text_key = request.get_json()
+        text = text_key['text']
+        key = text_key['key']
 
     if('TVTSQT-eF7Vj6vXe8' == key):
         load_model = pickle.load(open('model.pkl','rb'))
