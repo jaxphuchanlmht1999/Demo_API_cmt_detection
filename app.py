@@ -30,7 +30,7 @@ def submit():
     if request.method == 'POST':
 #         text = request.form['text']
 #         key = request.form['key']
-        text_key = request.get_json()
+        text_key = request.get_json(cache = True)
         text = text_key['text']
         key = text_key['key']
 
