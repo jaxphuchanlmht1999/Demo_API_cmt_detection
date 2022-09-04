@@ -36,10 +36,12 @@ def submit():
         load_vectorizer = pickle.load(open('save_vectorizer.pkl','rb'))
 
         y_pred = load_model.predict(load_vectorizer.transform([text]))
-
-        return render_template('sub.html', kq = str(y_pred))
+        
+        return str(y_pred)
+        # return render_template('sub.html', kq = str(y_pred))
     else:
-        return render_template('sub.html', kq = 'Key Error')
+        return 'Key Error'
+        # return render_template('sub.html', kq = 'Key Error')
 
 if __name__ == '__main__':
     app.run(debug=True)
